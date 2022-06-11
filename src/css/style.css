@@ -8,33 +8,41 @@
 
 body {
     width: 100%;
-    display: flex;
-    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.162);
 }
 
 .container {
     max-width: 1440px!important;
     margin: 0 auto;
     width: 100%;
-
 }
 
 .bannerTop {
     width: 100%;
+    height: 50px;
     cursor: pointer;
 }
 
 .bannerTop img {
     width: 100%;
-    height: 50px;
+    height: 100%;
     object-fit:none;
+}
+
+.itemHeader {
+    width: 100%;
+    background-color: #E4E4E4;
 }
 
 .mainHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #333;
 }
 
 .mainHeader .btnMainHeader {
@@ -45,29 +53,142 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 10px;
+    color: #2761C8;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
+    padding: 6px 15px;
     margin: 5px 2px;
     cursor: pointer;
 }
 
-.mainHeader .btnMainHeader a button:nth-child(2) {
-   background-color: #022768;
+.mainHeader .btnMainHeader button i {
+    margin-right: 5px;
+    font-size: 14px;
 }
 
-.mainHeader .btnMainHeader a button:nth-child(3) {
+.mainHeader .btnMainHeader .btn1 {
    background-color: #DC1C24;
+   color: #fff;
+}
+
+.mainHeader .btnMainHeader .btn1:hover{
+   background-color: #c61d22;
+   color: #fff;
+}
+
+.mainHeader .btnMainHeader .btn2 {
+   background-color: #022768;
+   color: #fff;
+}
+
+.mainHeader .btnMainHeader .btn2:hover {
+   background-color: #041e4b;
+   color: #fff;
 }
 
 .mainHeader .linkHeader {
     display: flex;
+
 }
+
+.mainHeader .linkHeader li {
+    position: relative;
+}
+
+.mainHeader .linkHeader .subMenu li.active {
+   display: block;
+}
+
+.mainHeader .linkHeader li a {
+   color: rgb(64, 64, 64);
+   font-size: 14px;
+   margin-left: 15px;
+}
+
+.mainHeader .linkHeader li a:hover {
+    color: #2761C8;
+}
+
+.mainHeader .linkHeader .subMenu {
+    position: absolute;
+    top: 0;
+    left: -70px;
+    height: 300px;
+}
+
+.mainHeader .linkHeader .subMenu2 {
+    left: 10px;
+}
+
+.mainHeader .linkHeader .subMenu2 li {
+    left: -30px;
+}
+
+.mainHeader .linkHeader .subMenu li {
+    position: relative;
+    top: 30px;
+    display: none;
+    flex-wrap: nowrap;
+    max-width: 250px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.259);
+    padding: 15px;
+    z-index: 1;
+ }
+
+ .mainHeader .linkHeader .subMenu li::after {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    transform: rotate(45deg);
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    box-sizing: inherit;
+    z-index: -1;
+ }
+ 
+ .mainHeader .linkHeader .subMenu li .textBox {
+    margin-bottom: 7px;
+ }
+
+ .mainHeader .linkHeader .subMenu li .textBox p {
+    font-size: 14px;
+    color: rgb(64, 64, 64);
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ .mainHeader .linkHeader .subMenu li .textBox span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #022768;
+    margin-bottom: 10px;
+}
+
+.mainHeader .linkHeader .subMenu li .textBox a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+ }
+
 
 .stickyHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px 0px;
 }
 
 .stickyHeader .logo {
@@ -78,5 +199,565 @@ body {
 .stickyHeader .logo a img {
     width: 100%;
     height: 100%;
+}
+
+.stickyHeader .logoForm {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.stickyHeader .search {
+    display: flex;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #1E5BC6;
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+.stickyHeader .search input {
+    width: 600px;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    color: rgb(64, 64, 64);
+}
+
+.stickyHeader .search button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 100%;
+    border: none;
+    background-color: #1E5BC6;
+    cursor: pointer;
+}
+
+.stickyHeader .search button i {
+    color: #fff;
+    font-size: 25px;
+}
+
+.stickyHeader .itensMenuHeader {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.stickyHeader .itensMenuHeader li {
+    margin-left: 20px;
+}
+
+.stickyHeader .itensMenuHeader li a {
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+
+.stickyHeader .itensMenuHeader li a i {
+    color: #1E5BC6;
+    font-size: 40px;
+}
+
+.stickyHeader .itensMenuHeader .textMenuLink  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stickyHeader .itensMenuHeader .textMenuLink span {
+    color: rgb(64, 64, 64);
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+nav {
+    background-color: #1E5BC6;
+}
+
+
+nav .menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .menu ul .listaMenu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 14px 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav .menu ul .listaMenu:last-child {
+    padding: 8px 0px;
+}
+
+nav .menu ul .listaMenu:hover {
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+nav .menu ul .nt {
+    padding: 14px 0px;
+}
+
+nav .menu ul .nt:hover {
+    padding: 14px 10px;
+}
+
+nav .menu ul .listaMenu:hover span {
+    color: #1E5BC6;
+}
+
+nav .menu ul .listaMenu span {
+    font-size: 13px;
+    color: #fff;
+}
+
+nav .menu ul .nt span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+nav .menu ul .listaMenu .subMenuPrincipal {
+    position: absolute;
+    top: 40px;
+    left: -0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.259);
+    opacity: 0;
+    pointer-events: none;
+    z-index: -6;
+    visibility: hidden;
+}
+
+nav .menu ul .listaMenu .sub2 {
+    padding: 20px;
+}
+
+nav .menu ul .listaMenu .subMenuPrincipal.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+    visibility: visible;
+}
+
+nav .menu ul .listaMenu .subMenuPrincipal li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.162);
+}
+
+nav .menu ul .listaMenu .subMenuPrincipal li span {
+    color: rgb(64, 64, 64);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+nav .menu ul .listaMenu .subMenuPrincipal li span:hover {
+    color: #2761C8;
+    text-decoration: underline;
+
+}
+
+.local .itemLocal {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+.local .itemLocal i {
+    font-size: 30px;
+    color: #1E5BC6;
+}
+
+.local .itemLocal span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #041e4b;
+}
+
+.local .itemLocal p {
+    font-size: 12px;
+    color: rgb(64, 64, 64);
+}
+
+.local .itemLocal .ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1E5BC6;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.local .itemLocal .ico i {
+    font-size: 18px;
+    color: #1E5BC6;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0 30px 0;
+}
+
+main .bannerMain {
+    margin: 10px 0;
+}
+
+main .bannerMain img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+main .slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .slide .carrosel {
+    overflow: hidden;
+
+}
+
+main .slide .carrosel .item {
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+    width: 100%;
+}
+
+main .slide .carrosel .item img {
+    width: 100%;
+}
+
+main .slide .controls {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    margin: auto;
+    z-index: 5;
+}
+
+main .slide .controls .prev {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.829);
+    z-index: 5;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+main .slide .controls .next {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.829);
+    z-index: 5;
+    cursor: pointer;
+}
+
+main .slide .controls div:hover {
+    border: 1px solid #1E5BC6;
+}
+
+main .slide .balls{
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 0 20px;
+    z-index: 6;
+}
+
+main .slide .balls span{
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #1E5BC6;
+    margin: 4px;
+    cursor: pointer;
+}
+
+main .cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+
+}
+
+main .cards .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+main .cards .card img {
+    width: 24.20%;
+    max-width: 350px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section {
+    width: 100%;
+    height: 90vh;
+}
+
+section .listaProdutos {
+    position: relative;
+}
+
+section .listaProdutos .textTitle {
+    color: #022768;
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 15px;
+    
+}
+
+section .listaProdutos .lista {
+    width: 100%;
+    overflow: hidden;
+}
+
+section .listaProdutos .lista .boxes {
+    display: flex;
+    align-items: center;
+    width: 5000px;
+}
+
+section .listaProdutos .lista .boxes .box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 280px;
+    border: 1px solid rgba(226, 220, 220, 0.539);
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 30px 15px;
+    cursor: pointer;
+}
+
+section .listaProdutos .lista .boxes .box .imgProduto {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+section .listaProdutos .lista .boxes .box .imgProduto img {
+    width: 100%;
+    overflow: hidden;
+}
+
+section .listaProdutos .lista .boxes .box .name p {
+    font-size: 12px;
+    color: rgb(64, 64, 64);
+    margin-bottom: 5px;
+}
+
+section .listaProdutos .lista .boxes .box .valor p {
+    font-size: 12px;
+    color: rgb(64, 64, 64);
+}
+
+section .listaProdutos .lista .boxes .box .valor h1 {
+    font-size: 18px;
+    color: #1E5BC6;
+    margin-bottom: 10px;
+}
+
+section .listaProdutos .lista .boxes .box .valor .valorAnterior {
+    font-size: 14px;
+    color: rgb(143, 139, 139);
+    text-decoration:line-through;
+}
+
+
+section .listaProdutos .lista .boxes .box .favorito {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgb(64, 64, 64);
+    border-radius: 50%;
+}
+
+section .listaProdutos .lista .boxes .box .favorito i {
+    font-size: 22px;
+    z-index: 10;
+    
+}
+
+section .listaProdutos .lista .boxes .box .desconto {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 70px;
+    right: 10px;
+    width: 40px;
+    height: 20px;
+    background-color: #FFE500;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+section .listaProdutos .lista .boxes .box .desconto span {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+section .listaProdutos .controls {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    margin: auto;
+    z-index: 5;
+}
+
+section .listaProdutos .prev {
+    position: absolute;
+    left: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.829);
+    z-index: 5;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+section .listaProdutos .next {
+    position: absolute;
+    right: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.829);
+    z-index: 5;
+    cursor: pointer;
+}
+
+
+section .listaProdutos .controls div:hover {
+    border: 1px solid #1E5BC6;
+}
+
+
+
+@media (max-width: 1450px) {
+
+    .container {
+        padding-left:50px;
+        padding-right:50px;
+    }
+
+    .stickyHeader .search input {
+        width: 450px;
+    }
+
+}
+
+@media (max-width: 1300px) {
+
+    .container {
+        padding-left:50px;
+        padding-right:50px;
+    }
+
+    .stickyHeader .search input {
+        width: 350px;
+    }
+}
+
+@media (max-width: 1260px) {
+
+    .container {
+        padding-left:50px;
+        padding-right:50px;
+    }
+
+    .stickyHeader .search input {
+        width: 250px;
+    }
+}
+
+@media (max-width: 1150px) {
+
+    .container {
+        max-width: 1150px;
+    }
+    
+    .stickyHeader .itensMenuHeader .textMenuLink {
+        display: none;
+    }
+
+    .stickyHeader .search input {
+        width: 350px;
+    }
 }
 
