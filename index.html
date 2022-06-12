@@ -266,9 +266,31 @@
             <div class="itemLocal">
                 <i class="material-icons">location_on</i>
                 <span>Ofertas para:</span>
-                <p>Recife - PE</p>
+                <div class="location">
+                    <p class="cidade"></p>
+                    <p class="estado"></p>
+                    </div>
                 <div class="ico">
                     <i class="material-icons">expand_more</i>
+                </div>
+                <div class="popupLocation">
+                    <div class="textLocation">
+                        <form action="" >
+                            <p>Digite um novo CEP ou selecione um endereço</p>
+                            <label for="cep">Digite seu CEP</label>
+                            <div class="campoLoacation">
+                                <input type="cep" placeholder="00000-000" value="" required maxlength="9">
+                                <button>OK</button>
+                            </div>
+                        </form>
+                        <div class="boxLocation">
+                            <div class="textBoxLocation">
+                                <p>Usar um endereço já cadastrado e continuar acumulando moedas.</p>
+                            </div>
+                            <button>Entrar</button>
+                        </div>
+                    </div>
+                    <i class="material-icons btnCloseModal">close</i>
                 </div>
             </div>
         </div>
@@ -291,10 +313,10 @@
             </div>
             
             <div class="controls">
-                <div class="prev">
+                <div class="left">
                     <i class="material-icons btnLeft">chevron_left</i>
                 </div>
-                <div class="next">
+                <div class="rigth">
                     <i class="material-icons btnRigth">chevron_right</i>
                 </div>
             </div>
@@ -315,7 +337,7 @@
     </main>
 
     <section>
-        <div class="listaProdutos container">
+        <div class="listaProdutos container boxProduct">
             <div class="textTitle">
                 <h1>Os melhores smartphones, pra voçê escolher!</h1>
             </div>
@@ -324,7 +346,7 @@
                     
                 </div>
             </div>
-            <div class="controls">
+            <div class="controls ">
                 <div class="prev">
                     <i class="material-icons btnLeft">chevron_left</i>
                 </div>
@@ -333,7 +355,352 @@
                 </div>
             </div>
         </div>
+        <div class="listaProdutos container">
+            <div class="textTitle">
+                <h1>As melhores oportunidades para as suas compras!</h1>
+            </div>
+            <div class="categorias">
+                <div class="tipos">
+                    <div class="imgCategoria">
+                        <img src="./src/img/cat1.png" alt="">
+                    </div>
+                    <p>Destilados</p>
+                </div>
+                <div class="tipos">
+                    <div class="imgCategoria">
+                        <img src="./src/img/cat2.png" alt="">
+                    </div>
+                    <p>TVs e Vídeo</p>
+                </div>
+                <div class="tipos">
+                    <div class="imgCategoria">
+                        <img src="./src/img/cat3.png" alt="">
+                    </div>
+                    <p>Apple</p>
+                </div>
+                <div class="tipos">
+                    <div class="imgCategoria">
+                        <img src="./src/img/cat4.png" alt="">
+                    </div>
+                    <p>Geladeiras</p>
+                </div>
+                <div class="tipos">
+                    <div class="imgCategoria">
+                        <img src="./src/img/cat5.png" alt="">
+                    </div>
+                    <p>Máquinas de Lavar</p>
+                </div>
+                <div class="tipos">
+                    <div class="imgCategoria">
+                        <img src="./src/img/cat6.png" alt="">
+                    </div>
+                    <p>Informática</p>
+                </div>
+                <div class="tipos">
+                    <div class="imgCategoria">
+                        <img src="./src/img/cat7.png" alt="">
+                    </div>
+                    <p>Eletroportáteis</p>
+                </div>
+                <div class="tipos">
+                    <div class="imgCategoria">
+                        <img src="./src/img/cat9.png" alt="">
+                    </div>
+                    <p>Afroempreendedores</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="listaProdutos container">
+            <div class="textTitle">
+                <h1>Várias ofertas, em mundos com grandes descontos!</h1>
+            </div>
+            <div class="categoriasMd">
+                <div class="tiposMd">
+                    <div class="imgMd">
+                        <img src="./src/img/img1.webp" alt="">
+                    </div>
+                </div>
+                <div class="tiposMd">
+                    <div class="imgMd">
+                        <img src="./src/img/md2.webp" alt="">
+                    </div>
+                </div>
+                <div class="tiposMd">
+                    <div class="imgMd">
+                        <img src="./src/img/md3.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="listaProdutos container boxProduct pd2">
+            <div class="textTitle">
+                <h1>Os melhores smartphones, pra voçê escolher!</h1>
+            </div>
+            <div class="lista">
+                <div class="boxes">
+                    
+                </div>
+            </div>
+            <div class="controls ">
+                <div class="prev">
+                    <i class="material-icons btnLeft">chevron_left</i>
+                </div>
+                <div class="next">
+                    <i class="material-icons btnRigth">chevron_right</i>
+                </div>
+            </div>
+        </div>
+        <div class="listaProdutos container">
+            <div class="textTitle">
+                <h1>Várias ofertas, em mundos com grandes descontos!</h1>
+            </div>
+            <div class="categoriasMd">
+                <div class="imgMd2 m1">
+                    <img src="./src/img/img1.webp" alt="">
+                    <img src="./src/img/img2.webp" alt="">
+                </div>
+                <div class="imgMd2 m2">
+                    <img class="bannerMd2" src="./src/img/img3.webp" alt="">
+                    <div class="imgP2">
+                        <img src="./src/img/img4.webp" alt="">
+                        <img src="./src/img/img5.webp" alt="">    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="listaProdutos container pd3">
+            <div class="textTitle">
+                <h1>Os melhores smartphones, pra voçê escolher!</h1>
+            </div>
+            <div class="lista">
+                <div class="boxes">
+                    <div class="cardBx">
+                        <div class="bx">
+                            <img src="./src/img/bx1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="cardBx">
+                        <div class="bx">
+                            <img src="./src/img/bx1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="cardBx">
+                        <div class="bx">
+                            <img src="./src/img/bx1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="cardBx">
+                        <div class="bx">
+                            <img src="./src/img/bx1.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="cardBx">
+                        <div class="bx">
+                            <img src="./src/img/bx1.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btnExtra">
+            <button>
+                <i class="material-icons">settings</i>
+                <span>Regras das Promoções Carrefour</span>
+            </button>
+        </div>
+        <ul class="listBtn container">
+            <li>
+                <div class="icoBtn">
+                    <img src="./src/img/svg1.svg" alt="">
+                </div>
+                <div class="textBtn">
+                    <h1>Mercado Online</h1>
+                    <p>Faça compras de mercado online <a href="#">aqui</a></p>
+                </div>
+            </li>
+            <li>
+                <div class="icoBtn">
+                    <img src="./src/img/svg2.svg" alt="">
+                </div>
+                <div class="textBtn">
+                    <h1>Cartão Carrefour</h1>
+                    <p>Use o cartão Carrefour e fique livre da anuidade. <a href="#">Veja mais</a></p>
+                </div>
+            </li>
+            <li>
+                <div class="icoBtn">
+                    <img src="./src/img/svg3.svg" alt="">
+                </div>
+                <div class="textBtn">
+                    <h1>Retire de carro</h1>
+                    <p>Compre pelo site e retire em uma loja sem sair do carro. <a href="#">Veja mais</a></p>
+                </div>
+            </li>
+            <li>
+                <div class="icoBtn">
+                    <img src="./src/img/svg4.svg" alt="">
+                </div>
+                <div class="textBtn">
+                    <h1>Retire na loja</h1>
+                    <p>Para que esperar? Compre no site e retire na loja. <a href="#">Veja mais</a></p>
+                </div>
+            </li>
+            <li>
+                <div class="icoBtn">
+                    <img src="./src/img/svg5.svg" alt="">
+                </div>
+                <div class="textBtn">
+                    <h1>Receba em casa</h1>
+                    <p>Compre pelo site e receba no conforto de sua casa. <a href="#">Veja mais</a></p>
+                </div>
+            </li>
+        </ul>
+        <div class="bannerBottom">
+            <img src="./src/img/bannerMainFooter.webp" alt="">
+        </div>
     </section>
+    <footer>
+        <div class="links container">
+            <div class="listaContainer">
+                <h1>Atendimento</h1>
+                <div class="listaLinks">
+                    <a href="">Minha conta</a>
+                    <a href="">Meus pedidos</a>
+                    <a href="">Encontre uma loja</a>
+                    <a href="">Central de Atendimento</a>
+                    <a href="">Cartão Carrefour</a>
+                    <a href="">Perguntas frequentes</a>
+                    <a href="">Denunciar Produtos Martketplace</a>
+                    <a href="">Consumidor.gov</a>
+                </div>
+            </div>
+            <div class="listaContainer">
+                <h1>Serviços</h1>
+                <div class="listaLinks">
+                    <a href="">Minhas listas</a>
+                    <a href="">Garantia Estendida</a>
+                    <a href="">Marketplace</a>
+                    <a href="">Apoio ao seller</a>
+                    <a href="">Institucional</a>
+                    <a href="">Perguntas frequentes</a>
+                </div>
+            </div>
+            <div class="listaContainer">
+                <h1>Institucional</h1>
+                <div class="listaLinks">
+                    <a href="">Grupo Carrefour</a>
+                    <a href="">Trabalhe conosco</a>
+                    <a href="">Diversidade</a>
+                    <a href="">CyberCook</a>
+                    <a href="">Blog Dica Amiga</a>
+                    <a href="">Mapa de Produtos</a>
+                    <a href="">Mapa do Site</a>
+                    <a href="">Sabor & Qualidade</a>
+                    <a href="">Black Friday</a>
+                    <a href="">Afroempreendedores</a>
+                </div>
+            </div>
+            <div class="listaContainer">
+                <h1>Políticas Carrefour</h1>
+                <div class="listaLinks">
+                    <a href="">Política de entregas</a>
+                    <a href="">Carrefour Te Protege</a>
+                    <a href="">Política de Trocas e Devoluções</a>
+                    <a href="">Política de Cancelamento e Ressarcimento</a>
+                    <a href="">Políticas Click & Retire Não Alimentar</a>
+                    <a href="">Política de Produtos Proibidos E-Commerce Carrefour</a>
+                    <a href="">Política de instalação de pneus</a>
+                    <a href="">Termos de Uso</a>
+                    <a href="">Central de Privacidade</a>
+                    <a href="">Política de Privacidade</a>
+                    <a href="">Política de Uso e de Repressão e Prevenção à Venda de Produtos Ilegais</a>
+                </div>
+            </div>
+            <div class="listaContainer">
+                <h1>Tire suas dúvidas ou compre pelo telefone:</h1>
+                <div class="listaBtn">
+                    <div class="btnLink">
+                        <p>Para regiões metropolitanas:</p>
+                        <button>
+                            <i class="material-icons">settings</i>
+                            <span>3004-2222</span>            
+                        </button>
+                    </div>
+                    <div class="btnLink">
+                        <p>Para demais regiões:</p>
+                        <button>
+                            <i class="material-icons">settings</i>
+                            <span>0800-718-2222</span>            
+                        </button>
+                    </div>
+                    <div class="textFoot">
+                        <p>Horário de atendimento:</p>
+                        <p>De segunda a domingo, das 08h às 21h</p>
+                        <p>*Horário de Brasília</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="pdFinal">
+        <div class="footer1 container">
+            <div class="formaPg">
+                <h1>Formas de Pagamentos</h1>
+                <div class="imgPg">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/mastercard-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/e25409d1-1270-4ff3-9ec7-823ef7c785f9___d4b6fbfb2b4eeda166e6cfb3c82967c2.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/elo-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/hipercard-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/carrefour-card-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/diners-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/american-express-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/visa-checkout-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/footer-boleto.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/gift-card-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/vale-troca-footer.PNG" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/payment-pix-footer.png" alt="">
+                </div>
+                <div class="imgPg">
+                    <p>Débito bancário</p>
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/itau-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/bradesco-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/santander-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/f88c7164-9a79-4181-920d-c352790f4319___bfb4ea346a84bcb62ae2c99449bf2721.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/e56c20fa-a05c-4758-9591-bc9709df246e___f70cb05606f37f8ec1189fb90c774e57.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/0a46da6e-5a34-4bfa-a657-b693ac3bba74___494f5a3205999d155276efe4fd397ed5.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/assets/vtex.file-manager-graphql/images/8d610422-ab08-4d5d-9d05-8aa93e92b99b___5ed0bccf29ad5c376a1945e57079d143.png" alt="">
+                </div>
+            </div>
+            <div class="footerSocial">
+                <h1>Siga-nos nas redes sociais</h1>
+                <div class="social">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/facebook-footer.png" alt="">
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/twitter-footer.png" alt="">    
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/instagram-footer.png" alt="">    
+                    <img src="https://carrefourbr.vtexassets.com/arquivos/youtube-footer.png" alt="">    
+                </div>
+            </div>
+        </div>
+
+        <div class="footer2 container">
+            <div class="textFooter">
+                <p>Carrefour Comércio e Indústrias Ltda: Via de Acesso Norte, Km 38, nº 420, Empresarial Gato Preto, Cajamar - SP | CEP 07789-100 | CNPJ: 45.543.915/0846-95</p>
+                <p>Envio de documentos administrativos e jurídicos: Rua George Eastman, nº 213 - Vila Tramontano, São Paulo, SP | CEP 05690-000</p>
+                <a href="#">atendimento@carrefour.com.br</a>
+            </div>
+            <div class="seguraça">
+                <img src="https://carrefourbr.vtexassets.com/arquivos/ambiente-seguro-footer.png" alt="">
+                <img src="https://newimgebit-a.akamaihd.net/ebitBR/selo/img_10581.png" alt="">
+            </div>
+        </div>
+        
+    </footer>
+    <div class="btnTop">
+        <i class="material-icons">expand_less</i> 
+    </div>
     
     
 
