@@ -1,81 +1,3 @@
-const cepValue = localStorage.getItem('cep')
-
-export default {cepValue}
-
-
-
-// Exibindo e ocultando link´s no top
-
-const menuLinks = document.querySelectorAll('.linkHeader li');
-
-for (let i = 0; i < menuLinks.length; i++) {
-   
-
-    setTimeout( menuLinks[i].addEventListener('mouseover', () => {
-        const submenu = menuLinks[i].querySelector('.subMenu li');
-        submenu.classList.add('active')
-        
-    }), 10000);
-
-    menuLinks[i].addEventListener('mouseout', () => {
-        const submenu = menuLinks[i].querySelector('.subMenu li');
-        submenu.classList.remove('active')
-    })
-}
-
-// Exibindo e ocultando menu "Todos os Departamentos"
-
-const menuDropdownPrincipal = document.querySelectorAll('.menuDropdown');
-
-for (let i = 0; i < menuDropdownPrincipal.length; i++) {
-   
-
-    setTimeout( menuDropdownPrincipal[i].addEventListener('mouseover', () => {
-        const submenu = menuDropdownPrincipal[i].querySelector('.subMenuPrincipal');
-        submenu.classList.add('active')
-        
-    }), 10000);
-
-    menuDropdownPrincipal[i].addEventListener('mouseout', () => {
-        const submenu = menuDropdownPrincipal[i].querySelector('.subMenuPrincipal');
-        submenu.classList.remove('active')
-    })
-}
-
-//Exibindo e ocultando modal de Localização
-
-const btnLocation = document.querySelector('.ico i')
-
-btnLocation.addEventListener('click', () => {
-    const popupLocation = document.querySelector('.popupLocation')
-    const btnCloseModal = document.querySelector('.btnCloseModal')
-    popupLocation.classList.add('active')
-    btnCloseModal.addEventListener('click', () => {
-        popupLocation.classList.remove('active')
-    })
-})
-
-//Exibindo e ocultando botão voltar ao topo do Site ao rolar o Scroll
-
-const btnTop = document.querySelector('.btnTop')
-
-window.addEventListener('scroll', () => {
-    if(scrollY > 0) {
-        btnTop.classList.add('active')
-    } else {
-        btnTop.classList.remove('active')
-    }
-})
-
-//Função voltar ao topo do site com o scroll Suave
-
-btnTop.addEventListener('click', () => {
-    window.scroll({
-        top: 0,
-        behavior: 'smooth'
-      })
-})
-
 //Controles de mudanças do carrosel da pagina inicial
 
 const btnPrev = document.querySelector('.left')
@@ -146,62 +68,85 @@ for(let i = 0; i < containerSliderProduct.length; i++) {
     })
 }
 
+//Função que irar pegar dados da API no BackEnde, para funcionar é necessario ativar o servidor Node
 
-//Api do carrefour para buscar os produtos da loja enviada no parametro fq
-
-const containerProducts = document.querySelectorAll('.boxProduct')
-async function getContent() {
+async function getContent2() {
     try {
-        const responde = await fetch('http://localhost:4567/')
-        const data = await responde.json()
-        const itens = data.data
 
-        for(let q = 0; q < containerProducts.length; q++) {
-            const listaProducts = containerProducts[q].querySelector('.boxes')
+        let cepStorage = '50740080'
 
-            for(let i = 0; i < itens.length; i++){
-                const classBox = `<div class="box ${itens[i].brand}">
-                                    <div class="imgProduto">
-                                        <img src="${itens[i].items[0].images[0].imageUrl}" alt="">
-                                    </div>
-                                    <div class="name">
-                                        <p>${itens[i].productName}</p>
-                                    </div>
-                                    <div class="valor">
-                                        <p class="valorAnterior">R$ ${itens[i].items[0].sellers[0].commertialOffer.PriceWithoutDiscount}</p>
-                                        <h1>R$ ${itens[i].items[0].sellers[0].commertialOffer.Price}</h1>
-                                        <p>em 1x no cartão ou boleto</p>
-                                    </div>
-                                    <div class="favorito">
-                                        <i class="material-icons ">favorite_border</i>
-                                    </div>
-                                    <div class="desconto">
-                                        <span>0%</span>
-                                    </div>
-                                </div>`
-                listaProducts.insertAdjacentHTML('beforeend', classBox)
-            }
-        }
+        if(localStorage.getItem('cep')) {
+            cepStorage = localStorage.getItem('cep')
+        } else { cepStorage = '50740080'}
+
+        const dataOf = await fetch('http://localhost:4567/home?cep=' + cepStorage)
+        const data = await dataOf.json();
+        const lojaProxima = data[0].sellers[0].name
+
+        getContent(lojaProxima);
     } catch (error) {
-        console.error('Errou')
+        console.error(error)
     }
 }
 
-getContent()
+getContent2()
 
-// Api de Cep
+
+async function getContent(lojaProxima) {
+    try {
+        const dataOf = await fetch('http://localhost:4567/?lojapd=' + lojaProxima)
+        const data = await dataOf.json();
+        console.log(dataOf)
+
+        show(data)
+
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+function show(data) {
+    const containerProducts = document.querySelectorAll('.boxProduct')
+    for(let q = 0; q < containerProducts.length; q++) {
+        const listaProducts = containerProducts[q].querySelector('.boxes')
+
+        for(let i = 0; i < data.length; i++){
+            const classBox = `<div class="box ${data[i].brand}">
+                                <div class="imgProduto">
+                                    <img src="${data[i].items[0].images[0].imageUrl}" alt="">
+                                </div>
+                                <div class="name">
+                                    <p>${data[i].productName}</p>
+                                </div>
+                                <div class="valor">
+                                    <p class="valorAnterior">R$ ${data[i].items[0].sellers[0].commertialOffer.PriceWithoutDiscount}</p>
+                                    <h1>R$ ${data[i].items[0].sellers[0].commertialOffer.Price}</h1>
+                                    <p>em 1x no cartão ou boleto</p>
+                                </div>
+                                <div class="favorito">
+                                    <i class="material-icons ">favorite_border</i>
+                                </div>
+                                <div class="desconto">
+                                    <span>0%</span>
+                                </div>
+                            </div>`
+            listaProducts.insertAdjacentHTML('beforeend', classBox)
+        }
+    }
+    
+}
+
+//Função que irar pegar o valor do cep na pagina inicial
 
 const formCep = document.querySelector('.textLocation form')
 const campoCep = document.querySelector('.campoLoacation input')
-
-
-
 
 formCep.addEventListener('submit', e => {
 
     localStorage.setItem('cep', campoCep.value)
 })
 
+// Api de Cep para buscar dados como endereço, cidade e estado
 
 const URL_CEP = `https://viacep.com.br/ws/${localStorage.getItem('cep')}/json/`
 
@@ -211,9 +156,13 @@ fetch(URL_CEP)
 }).then(data => {
     const cidade = data.localidade
     const estado = data.uf
+    const bairro = data.bairro
     const textCidade = document.querySelector('.cidade')
     localStorage.setItem('cidade', `${' ' + cidade + ' ' + '-' + ' ' + estado}`) 
+    localStorage.setItem('bairro', `${bairro}`) 
     textCidade.innerHTML = `${' ' + cidade + ' ' + '-' + ' ' + estado}`
 })
+
+
 
 

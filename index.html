@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-    <title>Document</title>
+    <title>Projeto Carrefour</title>
 </head>
 <body>
     <header>
@@ -28,10 +28,10 @@
                             <span>Mercado</span>
                         </button>
                     </a>
-                    <a href="#">
+                    <a href="./src/page/lojas.html">
                         <button class="btnHeader btn2">
                             <i class="material-icons">shopping_bag</i>
-                            <span>Serviços</span>
+                            <span>Lojas</span>
                         </button>
                     </a>
                    
@@ -62,7 +62,7 @@
                         <ul class="subMenu subMenu2">
                             <li>
                                 <div class="textBox">
-                                    <a href="#">Encontre uma Loja</a>
+                                    <a href="./src/page/lojas.html">Encontre uma Loja</a>
                                 </div>
                                 <div class="textBox">
                                     <a href="#">Grupo Carrefour</a>
@@ -85,13 +85,18 @@
         </div>
         <div class="stickyHeader container">
             <div class="logoForm">
+                <div class="menuHamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="logo">
-                    <a href="#">
+                    <a href="./index.html">
                         <img src="./src/img/logo.jpg" alt="">
                     </a>
                 </div>
                 <form class="search" action="">
-                    <input type="text" placeholder="Pesquise por produtos ou marcas">
+                    <input type="text" name="pesquisar" placeholder="Pesquise por produtos ou marcas">
                     <button>
                         <i class="material-icons">search</i>
                     </button>
@@ -279,8 +284,8 @@
                             <p>Digite um novo CEP ou selecione um endereço</p>
                             <label for="cep">Digite seu CEP</label>
                             <div class="campoLoacation">
-                                <input type="cep" placeholder="00000-000" value="" required maxlength="9">
-                                <button>OK</button>
+                                <input name="cep" type="text" placeholder="00000-000" value="" required maxlength="9">
+                                <button name="">OK</button>
                             </div>
                         </form>
                         <div class="boxLocation">
@@ -304,27 +309,25 @@
         </div>
         <div class="slide container">
             <div class="carrosel">
-                <div class="item">
-                    <img src="./src/img/car1.gif" alt="">
-                    <img src="./src/img/car2.webp" alt="">
-                    <img src="./src/img/car13.webp" alt="">
+                <div class="contItem">
+                    <div class="controls">
+                        <div class="left">
+                            <i class="material-icons btnLeft">chevron_left</i>
+                        </div>
+                        <div class="rigth">
+                            <i class="material-icons btnRigth">chevron_right</i>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./src/img/car1.gif" alt="">
+                        <img src="./src/img/car2.webp" alt="">
+                        <img src="./src/img/car13.webp" alt="">
+                    </div>
                 </div>
+                
                 
             </div>
             
-            <div class="controls">
-                <div class="left">
-                    <i class="material-icons btnLeft">chevron_left</i>
-                </div>
-                <div class="rigth">
-                    <i class="material-icons btnRigth">chevron_right</i>
-                </div>
-            </div>
-            <div class="balls">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
         <div class="cards container">
             <div class="card">
@@ -339,7 +342,7 @@
     <section>
         <div class="listaProdutos container boxProduct">
             <div class="textTitle">
-                <h1>Os melhores smartphones, pra voçê escolher!</h1>
+                <h1>Os melhores para sua casa!</h1>
             </div>
             <div class="lista">
                 <div class="boxes">
@@ -436,7 +439,7 @@
         </div>
         <div class="listaProdutos container boxProduct pd2">
             <div class="textTitle">
-                <h1>Os melhores smartphones, pra voçê escolher!</h1>
+                <h1>Os melhores para sua casa!</h1>
             </div>
             <div class="lista">
                 <div class="boxes">
@@ -476,7 +479,7 @@
                 <h1>Os melhores smartphones, pra voçê escolher!</h1>
             </div>
             <div class="lista">
-                <div class="boxes">
+                <div class="boxes containerBx">
                     <div class="cardBx">
                         <div class="bx">
                             <img src="./src/img/bx1.webp" alt="">
@@ -565,7 +568,9 @@
     <footer>
         <div class="links container">
             <div class="listaContainer">
-                <h1>Atendimento</h1>
+                <div class="textFooterLink">
+                    <h1>Atendimento</h1>
+                </div>
                 <div class="listaLinks">
                     <a href="">Minha conta</a>
                     <a href="">Meus pedidos</a>
@@ -578,7 +583,9 @@
                 </div>
             </div>
             <div class="listaContainer">
-                <h1>Serviços</h1>
+                <div class="textFooterLink">
+                    <h1>Serviços</h1>
+                </div>
                 <div class="listaLinks">
                     <a href="">Minhas listas</a>
                     <a href="">Garantia Estendida</a>
@@ -589,7 +596,9 @@
                 </div>
             </div>
             <div class="listaContainer">
-                <h1>Institucional</h1>
+                <div class="textFooterLink">
+                    <h1>Institucional</h1>
+                </div>
                 <div class="listaLinks">
                     <a href="">Grupo Carrefour</a>
                     <a href="">Trabalhe conosco</a>
@@ -604,7 +613,9 @@
                 </div>
             </div>
             <div class="listaContainer">
-                <h1>Políticas Carrefour</h1>
+                <div class="textFooterLink">
+                    <h1>Políticas Carrefour</h1>
+                </div>
                 <div class="listaLinks">
                     <a href="">Política de entregas</a>
                     <a href="">Carrefour Te Protege</a>
@@ -704,6 +715,7 @@
     
     
 
-    <script src="./src/js/script.js"></script>
+    <script type="module" src="./src/js/script.js"></script>
+    <script type="module" src="./src/js/module.js"></script>
 </body>
 </html>
