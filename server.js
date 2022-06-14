@@ -1,14 +1,12 @@
 const express = require('express')
 const app = express()
-const cors = require('cors')
 const axios = require('axios')
 
 
 
 
-const port = process.env.PORT || 4567
+const port = process.env.PORT || 4568
 
-app.use(cors())
 
 
 app.get('/', async(req, res) => {
@@ -31,3 +29,5 @@ app.get('/home', async(req, res) => {
 app.listen(port, () => {
     console.info('Aplicação Rodando')
 })
+
+
