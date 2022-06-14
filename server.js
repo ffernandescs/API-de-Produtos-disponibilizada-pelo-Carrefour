@@ -1,7 +1,19 @@
 const cors = require('cors')
 const express = require('express')
 const app = express()
+const router = express.Router()
 const axios = require('axios')
+
+router.get('/', (req, res) => {
+    res.json({
+        'hello': 'hi!'
+    })
+})
+
+
+app.unsubscribe('/.netlify/functions/api',router)
+
+
 
 app.use(cors())
 
