@@ -3,7 +3,6 @@ const express = require('express')
 const app = express()
 const axios = require('axios')
 
-const port = process.env.PORT || 3000;
 
 app.use(cors())
 
@@ -54,6 +53,6 @@ app.get('/lojasCp', async(req, res) => {
 
 
 
-app.listen(port, () => {
+app.listen('4567', () => {
     console.info('Aplicação Rodando')
 })
