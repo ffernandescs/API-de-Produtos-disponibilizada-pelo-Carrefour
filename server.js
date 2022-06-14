@@ -4,6 +4,9 @@ const app = express()
 const axios = require('axios')
 
 
+const port = process.env.PORT || 4567
+
+
 app.use(cors())
 
 // Ira passar informação da loja para pagina inicial, a mesma ja recebe o valor do frontEnd
@@ -53,6 +56,6 @@ app.get('/lojasCp', async(req, res) => {
 
 
 
-app.listen('4567', () => {
+app.listen(port, () => {
     console.info('Aplicação Rodando')
 })
