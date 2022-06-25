@@ -9,7 +9,6 @@ function accordionLink() {
             })
         }
 
-        console.log('okk')
 }
 
 accordionLink()

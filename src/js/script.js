@@ -1,6 +1,5 @@
 //Controles de mudanças do carrosel da pagina inicial
 
-
 const btnPrev = document.querySelector('.left')
 const btnNext = document.querySelector('.rigth')
 const larguraWidth = document.querySelector('.item');
@@ -80,7 +79,7 @@ async function getContent2() {
             cepStorage = localStorage.getItem('cep')
         } else { cepStorage = '50740080'}
 
-        const dataOf = await fetch('http://localhost:4568/home?cep=' + cepStorage)
+        const dataOf = await fetch('http://localhost:4567/home?cep=' + cepStorage)
         const data = await dataOf.json();
         const lojaProxima = data[0].sellers[0].name
 
@@ -95,10 +94,8 @@ getContent2()
 
 async function getContent(lojaProxima) {
     try {
-        const dataOf = await fetch('http://localhost:4568/?lojapd=' + lojaProxima)
+        const dataOf = await fetch('http://localhost:4567/?lojapd=' + lojaProxima)
         const data = await dataOf.json();
-        console.log(dataOf)
-
         show(data)
 
     } catch (error) {
