@@ -68,21 +68,6 @@ for(let i = 0; i < containerSliderProduct.length; i++) {
     })
 }
 
-// Funcao que ira mostrar ou ocultar Popup de Cep caso não tenha nenhum CEP armazenado no LocalStorege
-
-
-window.addEventListener('load', () => {
-    const cepIndex = document.querySelector('.cepIndex')
-
-    if(localStorage.getItem('cep') !== null) {
-        cepIndex.style.display = 'none'
-
-    } else {
-        cepIndex.style.display = 'flex'
-
-    }
-})
-
 //Função que irar pegar dados da API no BackEnde, para funcionar é necessario ativar o servidor Node
 
 async function getContent2() {
@@ -98,7 +83,6 @@ async function getContent2() {
         const data = await dataOf.json();
         const lojaProxima = data[0].sellers[0].name
 
-
         getContent(lojaProxima);
     } catch (error) {
         console.error(error)
@@ -107,13 +91,13 @@ async function getContent2() {
 
 getContent2()
 
+
 async function getContent(lojaProxima) {
     try {
         const dataOf = await fetch('http://localhost:4567/?lojapd=' + lojaProxima)
         const data = await dataOf.json();
 
         show(data)
-        console.log(data)
 
     } catch (error) {
         console.error(error)
@@ -152,16 +136,6 @@ function show(data) {
 }
 
 //Função que irar pegar o valor do cep na pagina inicial
-
-const formCepIndex = document.querySelector('.cepContainerIndex form')
-const campoCepIndex = document.querySelector('#cepIndex')
-
-formCepIndex.addEventListener('submit', e => {
-
-    localStorage.setItem('cep', campoCepIndex.value)
-})
-
-
 
 const formCep = document.querySelector('.textLocation form')
 const campoCep = document.querySelector('.campoLoacation input')

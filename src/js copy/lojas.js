@@ -3,9 +3,9 @@
 const formCep = document.querySelector('.searchLojas form')
 const campoCep = document.querySelector('.cepLoja')
 
-
 formCep.addEventListener('submit', e => {
     localStorage.setItem('cepLoja', campoCep.value);
+    
 })
 
 // Api de Cep para buscar dados como endereço, cidade e estado para exibir na pagina Lojas
@@ -26,10 +26,6 @@ fetch(URL_CEP)
     localStorage.setItem('bairroLoja', `${bairroLoja}`) 
     localStorage.setItem('logradouroLoja', `${logradouro}`) 
     textCidade.innerHTML = `${cidade}`
-
-    console.log(data)
-    getContent2(data)
-
 })
 
 
@@ -48,12 +44,17 @@ async function getContent(lojaProxima) {
 
 const listaLojas = document.querySelector('.listaLojas')
 
-async function getContent2(dataLoja) {
+async function getContent2() {
     try {
         const cepStorage = localStorage.getItem('cepLoja')
+        const cidadeStorage = localStorage.getItem('cidadeLoja')
+        const logradouroStorage = localStorage.getItem('logradouroLoja')
+        const bairro = localStorage.getItem('bairroLoja')
         const dataOf = await fetch('http://localhost:4567/lojasCp?cep=' + cepStorage)
         const data = await dataOf.json();
         const lojas = data[0].sellers
+
+        console.log(bairro)
 
         for(let i = 0; i < lojas.length; i++) {
             const listaLoja = lojas[i].id
@@ -62,12 +63,9 @@ async function getContent2(dataLoja) {
                                     <img src="../img/logocard.png" alt="">
                                     <div class="textCard">
                                         <h1>${listaLoja}</h1>
-                                        <p class="bairro">${dataLoja.bairro}</p>
-                                        <div class="textUf">
-                                            <p class="cidade">${dataLoja.localidade} -</p>
-                                            <p class="estado">${dataLoja.uf}</p>
-                                        </div>
-                                        <p class="cep">CEP: ${dataLoja.cep}</p>
+                                        <p>${logradouroStorage}</p>
+                                        <p>${cidadeStorage}</p>
+                                        <p>CEP: ${cepStorage}</p>
                                     </div>
                                 </div>
                                 <button>Ver folhetos de ofertas</button>
@@ -82,6 +80,7 @@ async function getContent2(dataLoja) {
         console.error(error)
     }
 }
+getContent2()
 
 
 

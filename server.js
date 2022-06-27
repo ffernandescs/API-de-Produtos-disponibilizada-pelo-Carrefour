@@ -3,7 +3,10 @@ const express = require('express')
 const app = express()
 const axios = require('axios')
 
+
 app.use(cors())
+
+
 
 const PORT = process.env.PORT || 4567 
 
@@ -12,7 +15,6 @@ const PORT = process.env.PORT || 4567
 app.get('/', async(req, res) => {
     const lojaProxima = req.query
     const { data } = await axios(`https://mercado.carrefour.com.br/api/catalog_system/pub/products/search?fq=${lojaProxima}`)
-
     return res.json(data)
 })
 
@@ -36,7 +38,6 @@ app.get('/lojas', async(req, res) => {
 })
 
 // Ira passar informação da Cep para pagina Lojas, a mesma ja recebe o valor do frontEnd
-
 
 app.get('/lojasCp', async(req, res) => {
     const cep = req.query
