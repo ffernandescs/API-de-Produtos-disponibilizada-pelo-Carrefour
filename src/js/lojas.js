@@ -10,24 +10,10 @@ formCep.addEventListener('submit', e => {
 
 // Api de Cep para buscar dados como endereço, cidade e estado para exibir na pagina Lojas
 
-const URL_CEP = `https://viacep.com.br/ws/${localStorage.getItem('cepLoja')}/json/`
-
-fetch(URL_CEP)
+fetch(`https://viacep.com.br/ws/${localStorage.getItem('cepLoja')}/json/`)
 .then(res => {
     return res.json()
 }).then(data => {
-    const cidadeLoja = data.localidade
-    const cidade = localStorage.getItem('cidade')
-    const estadoLoja = data.uf
-    const bairroLoja = data.bairro
-    const logradouro = data.logradouro
-    const textCidade = document.querySelector('.cidade')
-    localStorage.setItem('cidadeLoja', `${' ' + cidadeLoja + ' ' + '-' + ' ' + estadoLoja}`) 
-    localStorage.setItem('bairroLoja', `${bairroLoja}`) 
-    localStorage.setItem('logradouroLoja', `${logradouro}`) 
-    textCidade.innerHTML = `${cidade}`
-
-    console.log(data)
     getContent2(data)
 
 })
@@ -38,7 +24,6 @@ fetch(URL_CEP)
 async function getContent(lojaProxima) {
     try {
         const dataOf = await fetch('http://localhost:4567/?lojas=' + lojaProxima)
-        const data = await dataOf.json();
 
 
     } catch (error) {
